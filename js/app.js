@@ -4,7 +4,7 @@
     $scope.display = function(){
       $scope.displayContent = false;
       $scope.userError = false;
-      $http.get("https://cors.io/?https://99sszhzro1.execute-api.us-east-1.amazonaws.com/customers/info?cin="+
+      $http.get("https://cors.io/?https://l20jgb1jch.execute-api.us-east-1.amazonaws.com/customers/info?cin="+
                 $scope.CINinput).then(function(response){
                   if(response.data.queryStatus!="success"){
                     $scope.userError = true;
