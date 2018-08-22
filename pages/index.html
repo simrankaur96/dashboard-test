@@ -77,28 +77,21 @@
                               <!--Display customer information here-->
                                 <div id="load"></div>
                                 <div ng-show = "displayContent" id="content">
-                                  <ul class="nav navbar">
-                                    <li>
-                                        <a href="#"><b>CIN</b></a>
-                                        <a href="#"><font size="4em">{{user.cin}}</font></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><b>Customer Type</b></a>
-                                        <a href="#"><font size="4em">{{user.customerType}}</font></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><b>Address</b></a>
-                                        <a href="#"><font size="4em">{{user.address}}</font></a>
-                                    </li>
-                                    <li ng-If = "type">
-                                        <a href="#"><b>Incorporation Country</b></a>
-                                        <a href="#"><font size="4em">{{user.incorporationCountry}}</font></a>
-                                    </li>
-                                    <li ng-If = "type">
-                                        <a href="#"><b>Industry Classification</b></a>
-                                        <a href="#"><font size="4em">{{user.industryClassification}}</font></a>
-                                    </li>
-                                  </ul>
+                                  <a href="#" class="list-group-item" id="info">CIN<br/>
+                                    <span class="text-muted large"><em>{{user.cin}}</em></span>
+                                  </a>
+                                  <a href="#" class="list-group-item" id="info">Customer Type<br/>
+                                    <span class="text-muted large"><em>{{user.customerType}}</em></span>
+                                  </a>
+                                  <a href="#" class="list-group-item" id="info">Address<br/>
+                                    <span class="text-muted large"><em>{{user.address}}</em></span>
+                                  </a>
+                                  <a ng-show="type" href="#" class="list-group-item" id="info">Incorporation Country<br/>
+                                    <span class="text-muted large"><em>{{user.incorporationCountry}}</em></span>
+                                  </a>
+                                  <a ng-show="type" href="#" class="list-group-item" id="info">Industry Classification<br/>
+                                    <span class="text-muted large"><em>{{user.industryClassification}}</em></span>
+                                  </a>
                                 </div>
                               </div>
                             </li>
