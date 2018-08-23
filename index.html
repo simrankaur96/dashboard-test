@@ -33,7 +33,12 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+        <!-- Script headers for Asset Finance-->
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src = "js/assetFinance/getData.js"></script>
+        <!--Angular JS-->
         <script src = "js/angular.min.js"></script>
+        <!--Script header for Dashbaord-->
         <script src = "js/app.js"></script>
         <script src="js/loader.js"></script>
     </head>
@@ -63,7 +68,7 @@
                         <ul class="nav" id="side-menu">
                             <li class="sidebar-search">
                                 <div class="input-group custom-search-form">
-                                    <input type="text" class="form-control" placeholder="Search..." ng-model="CINinput">
+                                    <input type="text" class="form-control" placeholder="Enter CIN..." ng-model="CINinput" id="CINinput">
                                     <span class="input-group-btn">
                                         <button class="btn btn-primary" type="button" ng-click="display()">
                                             <i class="fa fa-search"></i>
@@ -144,8 +149,13 @@
                                 </div>
                             </div>
                             <!-- /.panel-heading -->
-                            <div class="panel-body">
-                                <div id="morris-area-chart"></div>
+                            <div class="panel-body" style="width: 500px; height: 400px; font-family: 'Roboto'; font-size: 15">
+                                <div id="barchart_material" style="width: 500px; height: 300px;"></div>
+		                    	<div id="linea" style="text-align: center; font-size: 12; padding-top: 5px; color: #424242"></div>
+		                    	<div id="lineb" style="text-align: center; padding-top: 5px; font-size: 14"></div>
+		                    	<br>
+		                    	<div id="linec" style="align-content: center;"></div>
+                                <!--<div id="morris-area-chart"></div>-->
                             </div>
                             <!-- /.panel-body -->
                         </div>
