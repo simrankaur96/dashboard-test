@@ -38,13 +38,18 @@
         <script src = "js/assetFinance/getData.js"></script>
         <!--Angular JS-->
         <script src = "js/angular.min.js"></script>
+        <!--headers for Supply Chain-->
+        <link href="css/adm.css" rel="stylesheet">
+        <link href="css/custom.css" rel="stylesheet">
+        <link href="https://canvasjs.com/assets/css/jquery-ui.1.11.2.min.css" rel="stylesheet" />
+        <script src="js/supplyChain/app.js"></script>
         <!--Script header for Dashbaord-->
         <script src = "js/app.js"></script>
         <script src="js/loader.js"></script>
     </head>
     <body ng-app="mainApp">
 
-        <div id="wrapper">
+        <div id="wrapper" ng-controller = "CINController">
 
             <!-- Navigation -->
             <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -63,7 +68,7 @@
                 </ul>
                 <!-- /.navbar-top-links-->
 
-                <div class="navbar-default sidebar" role="navigation" ng-controller = "CINController as instance">
+                <div class="navbar-default sidebar" role="navigation">
                     <div class="sidebar-nav navbar-collapse">
                         <ul class="nav" id="side-menu">
                             <li class="sidebar-search">
@@ -123,7 +128,7 @@
 
             <div id="page-wrapper">
                 <div ng-cloak  class="row">
-                    <div class="col-lg-12" ng-controller = "CINController as instance" >
+                    <div class="col-lg-12">
                         <h1 class="page-header">Dashboard</h1>
                         <div ng-show = "userError" id="errorMessage">
                           <div class = "alert alert-danger">{{errorResponse}}</div>
@@ -244,10 +249,43 @@
                             <div class="panel-heading">
                                 <i class="fa fa-bar-chart-o fa-fw"></i> Supply Chain
                             </div>
-                            <div class="panel-body">
-                                <div id="morris-donut-chart"></div>
-                                <a href="#" class="btn btn-default btn-block">View Details</a>
-                            </div>
+                            <div ng-cloak class="panel-body">
+                                <!-- <div id="morris-donut-chart"></div>
+                                <a href="#" class="btn btn-default btn-block">View Details</a> -->
+                                    <div class="row">
+                                        <div class="col-md-5 data-div">
+                                            <div class="small-box bg-aqua mybox data-div-inner">
+                                                <div class="inner">
+                                                    <h4>EUR  {{ outputdatatotal }} </h4>
+                                                    <p>Total Discounted</p>
+                                                </div>
+
+                                            </div>
+                                            <div class="small-box bg-aqua mybox data-div-inner">
+                                                <div class="inner">
+                                                    <h3>EUR {{ outputdatalast }} </h3>
+                                                    <p>Invoices Paid Last Month</p>
+                                                </div>
+
+                                            </div>
+                                            <div class="small-box bg-aqua mybox data-div-inner">
+                                                <div class="inner">
+                                                    <h3>EUR {{ outputdatapending }} </h3>
+                                                    <p>Pending Payments (Future Exposure)</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-7 chart-div">
+
+                                          <!--    <div id="chartContainer1" style="height: 100%; width: 100%; border: 1px solid "></div>-->
+                                          Insert Chart Here<br>
+                                          check index-static.html for example
+
+                                        </div>
+                                    </div>
+                                </div>
                             <!-- /.panel-body -->
                         </div>
 
@@ -278,6 +316,11 @@
 
         <!-- Custom Theme JavaScript -->
         <script src="js/startmin.js"></script>
+
+        <!-- Supply Chain links -->
+        <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+        <script src="https://canvasjs.com/assets/script/jquery-ui.1.11.2.min.js"></script>
+        <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
 
     </body>
 </html>

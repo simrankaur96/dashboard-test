@@ -1,0 +1,47 @@
+.divmain{
+    
+    margin: 0;
+    padding: 0;
+}
+
+.mybox{
+    margin-bottom: 0;
+}
+
+.chart-div{
+    margin-left: 0;
+    background-color: ;
+    padding: 10px;
+}
+.data-div-inner{
+        margin: 5px;
+        background-color: #14366E;
+}
+.data-div{
+    
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.chart-bars{
+    padding: 10px;
+    margin: 2px;
+    
+}
+
+.progress-bar-aqua{
+    background-color: red;
+}
+
+.progress-bar-green{
+    background-color: green;
+}
+
+.progress-bar-yellow{
+    background-color: yellow;
+}
+
+.main-container{
+    background-color: whitesmoke;
+    border: 1 px solid #14366E;
+}
