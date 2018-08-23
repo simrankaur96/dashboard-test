@@ -67,13 +67,14 @@
                     <div class="sidebar-nav navbar-collapse">
                         <ul class="nav" id="side-menu">
                             <li class="sidebar-search">
-                                <div class="input-group custom-search-form">
+                              <div class="input-group custom-search-form">
+                                <form ng-submit="display()" class="input-group custom-search-form">
                                     <input type="text" class="form-control" placeholder="Enter CIN..." ng-model="CINinput" id="CINinput">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-primary" type="button" onclick="init()" ng-click="display()">
+                                    <span class="input-group-btn"><button class="btn btn-primary" type="button" onclick="init()" ng-click="display()">
                                             <i class="fa fa-search"></i>
                                         </button>
                                     </span>
+                                  </form>
                                 </div>
                                 <!-- /input-group -->
                             </li>
