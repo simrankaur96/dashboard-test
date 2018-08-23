@@ -38,7 +38,7 @@ var xhttp = new XMLHttpRequest();
 		
 		function init() {
 			cid = document.getElementById("CINinput").value;
-			xhttp.open("GET", "https://ec2-35-154-25-21.ap-south-1.compute.amazonaws.com:3000/page/?cin=" + cid, true);
+			xhttp.open("GET", "http://ec2-35-154-25-21.ap-south-1.compute.amazonaws.com:3000/page/?cin=" + cid, true);
 			xhttp.send();
 		}
 		
