@@ -1,6 +1,6 @@
 (function(){
   angular.module('mainApp',[])
-  .controller('CINController', function($scope, $http){
+  .controller('CINController', function($rootScope,$scope, $http){
     $scope.display = function(){
       var cin = document.getElementById("CINinput").value;
       if(!isNaN(cin)){
@@ -8,9 +8,10 @@
         $scope.userError = false;
         $http.get("https://cors.io/?https://l20jgb1jch.execute-api.us-east-1.amazonaws.com/customers/info?cin="+
                   cin).then(function(response){
+                    //console.log("working?");
                     if(response.data.queryStatus!="success"){
-                      $scope.userError = true;
-                      $scope.errorResponse = response.data.queryStatus;
+                      $rootScope.userError = true;
+                      $rootScope.errorResponse = response.data.queryStatus;
                     }else{
                       if(response.data.customerType=="Corporate"){
                         $scope.type = true;
