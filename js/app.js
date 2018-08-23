@@ -8,7 +8,7 @@
                 $scope.CINinput).then(function(response){
                   if(response.data.queryStatus!="success"){
                     $scope.userError = true;
-                    $scope.errorResponse = response.data;
+                    $scope.errorResponse = response.data.queryStatus;
                   }else{
                     if(response.data.customerType=="Corporate"){
                       $scope.type = true;

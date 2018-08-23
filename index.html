@@ -70,7 +70,7 @@
                                 <div class="input-group custom-search-form">
                                     <input type="text" class="form-control" placeholder="Enter CIN..." ng-model="CINinput" id="CINinput">
                                     <span class="input-group-btn">
-                                        <button class="btn btn-primary" type="button" ng-click="display()" onclick="init()">
+                                        <button class="btn btn-primary" type="button" onclick="init()" ng-click="display()">
                                             <i class="fa fa-search"></i>
                                         </button>
                                     </span>
@@ -81,6 +81,15 @@
                               <div ng-cloak>
                               <!--Display customer information here-->
                                 <div id="load"></div>
+                                <div ng-hide = "displayContent" id="content">
+                                  <a href="#" class="list-group-item" id="info">CIN</a>
+                                   <a href="#" class="list-group-item" id="info">Name</a>
+                                  <a href="#" class="list-group-item" id="info">Customer Type</a>
+                                  <a href="#" class="list-group-item" id="info">Address</a>
+                                   <a href="#" class="list-group-item" id="info">Residence Country</a>
+                                  <a href="#" class="list-group-item" id="info">Incorporation Country</a>
+                                  <a href="#" class="list-group-item" id="info">Industry Classification</a>
+                                </div>
                                 <div ng-show = "displayContent" id="content">
                                   <a href="#" class="list-group-item" id="info">CIN<br/>
                                     <span class="text-muted large"><em>{{user.cin}}</em></span>
