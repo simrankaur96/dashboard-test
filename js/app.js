@@ -45,9 +45,9 @@
                     $scope.displaySCF = true;
                     var responsedata = response.data;
                     $scope.outputdatacin = responsedata.cin;
-                    $scope.outputdatatotal = responsedata.total_discounted;
-                    $scope.outputdatapending = responsedata.pending_payments;
-                    $scope.outputdatalast = responsedata.last_month;
+                    $scope.outputdatatotal = responsedata.total_discounted.toLocaleString();
+                    $scope.outputdatapending = responsedata.pending_payments.toLocaleString();
+                    $scope.outputdatalast = responsedata.last_month.toLocaleString();
                     console.log("Successfully GET");
                     google.charts.load('current', {
                         'packages': ['bar']
@@ -69,7 +69,7 @@
                 ]);
 
                         var options = {
-                            width: 200,
+                            width: '100%',
                             chart: {
                                 title: ' ',
                                 subtitle: ''

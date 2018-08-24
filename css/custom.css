@@ -13,10 +13,16 @@
     background-color: ;
     padding: 10px;
 }
+.data-div-inner-scf{
+      
+        margin: 10px 80px 2px 20px;
+        background-color: #14366E;
+}
 .data-div-inner{
         margin: 5px;
         background-color: #14366E;
 }
+
 .data-div{
 
     margin-right: 0;
