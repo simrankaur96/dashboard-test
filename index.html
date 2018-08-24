@@ -33,19 +33,25 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-        <!-- Script headers for Asset Finance-->
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script src = "js/assetFinance/getData.js"></script>
+
         <!--Angular JS-->
         <script src = "js/angular.min.js"></script>
+        <!--Script header for Dashbaord-->
+        <script src = "js/app.js"></script>
+        <script src="js/loader.js"></script>
         <!--headers for Supply Chain-->
         <link href="css/adm.css" rel="stylesheet">
         <link href="css/custom.css" rel="stylesheet">
         <link href="https://canvasjs.com/assets/css/jquery-ui.1.11.2.min.css" rel="stylesheet" />
         <script src="js/supplyChain/app.js"></script>
-        <!--Script header for Dashbaord-->
-        <script src = "js/app.js"></script>
-        <script src="js/loader.js"></script>
+
+        <!-- Script headers for Asset Finance-->
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>\
+        <script src = "getData.js"></script>
+
+        <!-- Script for Trade Finance -->
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="js/tradeFinance/charts.js"></script>
     </head>
     <body ng-app="mainApp">
 
@@ -142,35 +148,15 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <i class="fa fa-bar-chart-o fa-fw"></i> Asset Finance
-                                <div class="pull-right">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-default btn-xs dropdown-toggle"
-                                                data-toggle="dropdown">
-                                            Actions
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu pull-right" role="menu">
-                                            <li><a href="#">Action</a>
-                                            </li>
-                                            <li><a href="#">Another action</a>
-                                            </li>
-                                            <li><a href="#">Something else here</a>
-                                            </li>
-                                            <li class="divider"></li>
-                                            <li><a href="#">Separated link</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
                             </div>
                             <!-- /.panel-heading -->
-                            <div class="panel-body" ><!--style="width: 500px; height: 400px; font-family: 'Roboto'; font-size: 15">-->
-                                <!---<div id="barchart_material" style="width: 500px; height: 300px;"></div>
-		                    	<div id="linea" style="text-align: center; font-size: 12; padding-top: 5px; color: #424242"></div>
-		                    	<div id="lineb" style="text-align: center; padding-top: 5px; font-size: 14"></div>
-		                    	<br>
-		                    	<div id="linec" style="align-content: center;"></div>-->
-				    <div id="morris-area-chart"></div>
+                            <div class="panel-body" style="font-family: 'Roboto'; font-size: 15">
+                                 <div id="barchart_material"></div>
+		                    	       <div id="linea" style="text-align: center; font-size: 12; padding-top: 5px; color: #424242"></div>
+		                    	       <div id="lineb" style="text-align: center; padding-top: 5px; font-size: 14"></div>
+		                    	       <br>
+		                    	       <div id="linec" style="align-content: center;"></div>
+				                         <!-- <div id="morris-area-chart"></div> -->
                             </div>
                             <!-- /.panel-body -->
                         </div>
@@ -178,35 +164,52 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <i class="fa fa-bar-chart-o fa-fw"></i> Trade Finance
-                                <div class="pull-right">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-default btn-xs dropdown-toggle"
-                                                data-toggle="dropdown">
-                                            Actions
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu pull-right" role="menu">
-                                            <li><a href="#">Action</a>
-                                            </li>
-                                            <li><a href="#">Another action</a>
-                                            </li>
-                                            <li><a href="#">Something else here</a>
-                                            </li>
-                                            <li class="divider"></li>
-                                            <li><a href="#">Separated link</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
                             </div>
                             <!-- /.panel-heading -->
-                            <div class="panel-body">
+                            <div ng-cloak class="panel-body">
+                              <!-- <div id="morris-donut-chart"></div>
+                              <a href="#" class="btn btn-default btn-block">View Details</a> -->
+                              <center><h4>Letter Of Credit</h4></center>
+                              <center><div id="piechart"><h3>letter of credit</h3></div></center>
                                 <div class="row">
-                                    <div class="col-lg-12">
-                                        <div id="morris-bar-chart"></div>
+                                    <div class="col-md-6">
+                                        <div class="small-box bg-blue mybox data-div-inner">
+                                            <div class="inner">
+                                                <h4>£{{ userDetails.message['Total Exposure'] }}</h4>
+                                                <p>Total Exposure</p>
+                                            </div>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-6 ">
+                                        <div class="small-box bg-blue mybox data-div-inner">
+                                            <div class="inner">
+                                                <h4>£{{ userDetails.message['Work in Progress'] }}</h4>
+                                                <p>Work in Progress</p>
+                                            </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                        <div class="small-box bg-blue mybox data-div-inner">
+                                            <div class="inner">
+                                                <h4>LCs:{{ userDetails.message['Expiring LC'] }}</h4>
+                                                <p>Expiring in next 30 days</p>
+                                            </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <div class="small-box bg-blue mybox data-div-inner">
+                                          <div class="inner">
+                                              <h4>£{{ userDetails.message['Expiring Amount'] }}</h4>
+                                              <p> Expiring Amount</p>
+                                          </div>
+                                      </div>
                                     </div>
-                                    <!-- /.col-lg-8 (nested) -->
-                                </div>
+                                  </div>
+                                  <input type="hidden" id="total_discounted" ng-model="outputdatatotal">
+                                  <input type="hidden" id="last_month" ng-model="outputdatalast">
+                                  <input type="hidden" id="pending_payments" ng-model="outputdatapending">
                                 <!-- /.row -->
                             </div>
                             <!-- /.panel-body -->

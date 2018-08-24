@@ -13,16 +13,16 @@ var xhttp = new XMLHttpRequest();
 					for(i=0;i<obj.length;i++)
 					{
 						if (obj[i].AssetType == "Vehicles") {
-							v1 = obj[i].AmtLeased;
-							v2 = obj[i].AmtPending;
+							v1 += obj[i].AmtLeased;
+							v2 += obj[i].AmtPending;
 						}
 						if (obj[i].AssetType == "Healthcare Equipment") {
-							h1 = obj[i].AmtLeased;
-							h2 = obj[i].AmtPending;
+							h1 += obj[i].AmtLeased;
+							h2 += obj[i].AmtPending;
 						}
 						if (obj[i].AssetType == "Helicopters and Jets") {
-							j1 = obj[i].AmtLeased;
-							j2 = obj[i].AmtPending;
+							j1 += obj[i].AmtLeased;
+							j2 += obj[i].AmtPending;
 						}
 					}
 					google.charts.load('current', {'packages':['bar']});
@@ -35,13 +35,13 @@ var xhttp = new XMLHttpRequest();
 				}
 			}
 		};
-		
+
 		function init() {
 			cid = document.getElementById("CINinput").value;
-			xhttp.open("GET", "http://ec2-35-154-25-21.ap-south-1.compute.amazonaws.com:3000/page/?cin=" + cid, true);
+			xhttp.open("GET", "https://30iy1f2ruh.execute-api.ap-south-1.amazonaws.com/latest/page/?cin=" + cid, true);
 			xhttp.send();
 		}
-		
+
 		function drawChart() {
 			var data = new google.visualization.arrayToDataTable([
 				['Asset Type', 'Amount\nLeased', 'Amount\nPending'],
@@ -49,9 +49,9 @@ var xhttp = new XMLHttpRequest();
 				['Healthcare\nEquipment', h1, h2],
 				['Helicopters\nand Jets', j1, j2]
 				]);
-			
+
 			var options = {
-				width: 500,
+				width: '100%',
 				legend: { position: 'none' },
 				colors:['#3366cc', '#dc3912'],
 				bars: 'horizontal',
@@ -60,7 +60,7 @@ var xhttp = new XMLHttpRequest();
 				},
 				bar: { groupWidth: "61.8%" }
 			};
-			
+
 			var chart = new google.charts.Bar(document.getElementById('barchart_material'));
 			chart.draw(data, options);
 			document.getElementById('linea').innerHTML = "GBP(£)";
