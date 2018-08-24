@@ -1,12 +1,14 @@
 (function(){
   angular.module('mainApp',[])
+
   .config(function ($httpProvider) {
       $httpProvider.defaults.headers.common = {};
       $httpProvider.defaults.headers.post = {};
       $httpProvider.defaults.headers.put = {};
       $httpProvider.defaults.headers.patch = {};
   })
-  .controller('CINController', function($rootScope,$scope, $http){
+
+  .controller('CINController', function($scope, $http){
     $scope.display = function(){
       var cin = document.getElementById("CINinput").value;
       if(!isNaN(cin)){
@@ -17,8 +19,8 @@
                   cin).then(function(response){
                     //console.log("working?");
                     if(response.data.queryStatus!="success"){
-                      $rootScope.userError = true;
-                      $rootScope.errorResponse = response.data.queryStatus;
+                      $scope.userError = true;
+                      $scope.errorResponse = response.data.queryStatus;
                     }else{
                       if(response.data.customerType=="Corporate"){
                         $scope.type = true;
@@ -32,6 +34,7 @@
 
         // For Supply Chain Display -->
         //    Our GET request function
+        //$scope.displaySCF = false;
         $scope.outputdatacin = "";
         $scope.outputdatatotal = "";
         $scope.outputdatapending = "";
@@ -39,7 +42,7 @@
             $http.get("http://cors-anywhere.herokuapp.com/https://9pded99twc.execute-api.ap-south-1.amazonaws.com/SCF_Test_1/scfresource?cin="+cin)
                 .then(function successCallback(response) {
                     //$scope.outputdata = response.text;
-
+                    //$scope.displaySCF = true;
                     var responsedata = response.data;
                     $scope.outputdatacin = responsedata.cin;
                     $scope.outputdatatotal = responsedata.total_discounted;

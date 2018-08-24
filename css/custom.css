@@ -1,5 +1,5 @@
 .divmain{
-    
+
     margin: 0;
     padding: 0;
 }
@@ -18,7 +18,7 @@
         background-color: #14366E;
 }
 .data-div{
-    
+
     margin-right: 0;
     padding-right: 0;
 }
@@ -26,7 +26,7 @@
 .chart-bars{
     padding: 10px;
     margin: 2px;
-    
+
 }
 
 .progress-bar-aqua{
@@ -44,4 +44,7 @@
 .main-container{
     background-color: whitesmoke;
     border: 1 px solid #14366E;
+}
+body {
+  padding-top: 30px;
 }
