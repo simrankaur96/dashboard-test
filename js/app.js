@@ -34,7 +34,7 @@
 
         // For Supply Chain Display -->
         //    Our GET request function
-        //$scope.displaySCF = false;
+        $scope.displaySCF = false;
         $scope.outputdatacin = "";
         $scope.outputdatatotal = "";
         $scope.outputdatapending = "";
@@ -42,7 +42,7 @@
             $http.get("http://cors-anywhere.herokuapp.com/https://9pded99twc.execute-api.ap-south-1.amazonaws.com/SCF_Test_1/scfresource?cin="+cin)
                 .then(function successCallback(response) {
                     //$scope.outputdata = response.text;
-                    //$scope.displaySCF = true;
+                    $scope.displaySCF = true;
                     var responsedata = response.data;
                     $scope.outputdatacin = responsedata.cin;
                     $scope.outputdatatotal = responsedata.total_discounted;
