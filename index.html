@@ -253,38 +253,37 @@
                                 <!-- <div id="morris-donut-chart"></div>
                                 <a href="#" class="btn btn-default btn-block">View Details</a> -->
                                     <div class="row">
-                                        <div class="col-md-5 data-div">
-                                            <div class="small-box bg-aqua mybox data-div-inner">
-                                                <div class="inner">
-                                                    <h3>EUR  {{ outputdatatotal }} </h3>
-                                                    <p>Total Discounted</p>
-                                                </div>
+                                      <div class="col-md-4">
+                                          <div class="small-box bg-aqua mybox data-div-inner">
+                                              <div class="inner">
+                                                  <h4>EUR {{ outputdatatotal }} </h4>
+                                                  <p>Total Discounted</p>
+                                              </div>
 
-                                            </div>
-                                            <div class="small-box bg-aqua mybox data-div-inner">
-                                                <div class="inner">
-                                                    <h3>EUR {{ outputdatalast }} </h3>
-                                                    <p>Invoices Paid Last Month</p>
-                                                </div>
+                                          </div>
+                                          <div class="small-box bg-aqua mybox data-div-inner">
+                                              <div class="inner">
+                                                  <h4>EUR {{ outputdatapending }} </h4>
+                                                  <p>Pending Payments (Future Exposure)</p>
+                                              </div>
 
-                                            </div>
-                                            <div class="small-box bg-aqua mybox data-div-inner">
-                                                <div class="inner">
-                                                    <h3>EUR {{ outputdatapending }} </h3>
-                                                    <p>Pending Payments (Future Exposure)</p>
-                                                </div>
+                                          </div>
+                                          <div class="small-box bg-aqua mybox data-div-inner">
+                                              <div class="inner">
+                                                  <h4>EUR {{ outputdatalast }} </h4>
+                                                  <p>Invoices Paid Last Month</p>
+                                              </div>
 
-                                            </div>
-                                        </div>
+                                          </div>
+                                      </div>
 
-                                        <div class="col-md-7 chart-div">
-
-                                          <!--    <div id="chartContainer1" style="height: 100%; width: 100%; border: 1px solid "></div>-->
-                                          Insert Chart Here<br>
-                                          check index-static.html for example
-
+                                        <div class="col-md-8 chart-div">
+                                            <div id="dual_x_div" style=""></div>
                                         </div>
                                     </div>
+                                    <input type="hidden" id="total_discounted" ng-model="outputdatatotal">
+                                    <input type="hidden" id="last_month" ng-model="outputdatalast">
+                                    <input type="hidden" id="pending_payments" ng-model="outputdatapending">
                                 </div>
                             <!-- /.panel-body -->
                         </div>
@@ -321,6 +320,8 @@
         <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
         <script src="https://canvasjs.com/assets/script/jquery-ui.1.11.2.min.js"></script>
         <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript" src="js/supplyChain/barchart.js"></script>
 
     </body>
 </html>
