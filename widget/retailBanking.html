@@ -6,7 +6,7 @@
         <!-- /.panel-heading -->
         <div ng-cloak class = "panel-body">
           <div ng-if="data1.Items[0].ACCOUNT_NUMBER.S == 'NULL'" >
-            <div><center><h1>NO ACCOUNT AVAILABLE</h1></center></div>
+            <div><center><h6>NO ACCOUNT AVAILABLE</h6></center></div>
           </div>
           <div ng-if="data1.Items[0].ACCOUNT_NUMBER.S != 'NULL'" >
               <div class="row">
@@ -27,8 +27,8 @@
                       </div>
                       <br>
                       <span style="font-size: 14px">
-                          <b>Total Credit(Last Month): £{{creditval}}</b>
-                          <br><b>Total Debit(Last Month): £{{debitval}}</b>
+                          <b>Total Credit(Last Month):<br/> £{{creditval}}</b>
+                          <br><b>Total Debit(Last Month):<br/> £{{debitval}}</b>
 
                       </span>
                   </div>
@@ -49,7 +49,7 @@
                               <th>Transaction Id</th>
                               <th>Date</th>
                               <th>Type</th>
-                              <th>Amount</th>
+                              <th>Amount(£)</th>
                           </tr>
                           <tr ng-repeat="item in data2.Items">
                               <td>{{item.TRANSACTION_ID.S}}</td>

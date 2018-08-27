@@ -18,7 +18,13 @@ retailBanking = function(cin,$scope,$http){
       var l1='https://80a0rk0mlk.execute-api.ap-south-1.amazonaws.com/Accounts/accounts/'+cin;
       $http.get(l1).then(responseCallback1);
 
-
+      function compare(a,b) {
+         if (a.TRANSACTION_DATE.S > b.TRANSACTION_DATE.S)
+            return -1;
+         if (a.TRANSACTION_DATE.S < b.TRANSACTION_DATE.S)
+            return 1;
+        return 0;
+      }
 
       var responseCallback2 = function (response) {
           $scope.data2 = response.data;
@@ -34,6 +40,11 @@ retailBanking = function(cin,$scope,$http){
                else if(s2.Items[i].TRANSACTION_TYPE.S == "DEBIT")
                vdebit =vdebit+(+s2.Items[i].TRANSACTION_AMOUNT.N);
            }
+
+           $scope.data2.Items.sort(compare);
+           if($scope.data2.Items.length>2)
+              $scope.data2.Items=$scope.data2.Items.slice(0, 3);
+            
            datac.push(vcredit);
            datac.push(vdebit);
            f1(datac);

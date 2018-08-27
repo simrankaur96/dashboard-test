@@ -21,7 +21,7 @@ function f1(datac) {
         title: {
             display: true,
             position: "top",
-            text: "CREDIT vs DEBIT",
+            text: "Credit Vs Debit",
             fontSize: 18,
             fontColor: "#111"
         },
