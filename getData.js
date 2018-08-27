@@ -52,6 +52,7 @@ var xhttp = new XMLHttpRequest();
 
 			var options = {
 				width: '100%',
+				height:200,
 				legend: { position: 'none' },
 				colors:['#3366cc', '#dc3912'],
 				bars: 'horizontal',

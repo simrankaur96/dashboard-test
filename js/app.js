@@ -10,6 +10,7 @@
 
   .controller('CINController', function($scope, $http){
     $scope.display = function(){
+      init();
       var cin = document.getElementById("CINinput").value;
       if(!isNaN(cin)){
         // For Customer Info display -->
@@ -40,7 +41,7 @@
 
         //Retail Banking logic -->
               retailBanking(cin,$scope,$http);
-              
+
 
         }else{
           $scope.userError = true;

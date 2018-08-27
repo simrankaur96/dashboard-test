@@ -32,6 +32,7 @@ $scope.outputdatalast = "";
         ]);
 
                 var options = {
+                    legend: { position: 'none' },
                     width: '100%',
                     chart: {
                         title: ' ',
