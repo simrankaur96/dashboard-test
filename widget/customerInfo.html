@@ -1,0 +1,33 @@
+<div id="load"></div>
+<div ng-hide = "displayContent" id="content">
+  <a href="#" class="list-group-item" id="info">CIN</a>
+   <a href="#" class="list-group-item" id="info">Name</a>
+  <a href="#" class="list-group-item" id="info">Customer Type</a>
+  <a href="#" class="list-group-item" id="info">Address</a>
+   <a href="#" class="list-group-item" id="info">Residence Country</a>
+  <a href="#" class="list-group-item" id="info">Incorporation Country</a>
+  <a href="#" class="list-group-item" id="info">Industry Classification</a>
+</div>
+<div ng-show = "displayContent" id="content">
+  <a href="#" class="list-group-item" id="info">CIN<br/>
+    <span class="text-muted large"><em>{{user.cin}}</em></span>
+  </a>
+   <a href="#" class="list-group-item" id="info">Name<br/>
+    <span class="text-muted large"><em>{{user.name}}</em></span>
+  </a>
+  <a href="#" class="list-group-item" id="info">Customer Type<br/>
+    <span class="text-muted large"><em>{{user.customerType}}</em></span>
+  </a>
+  <a href="#" class="list-group-item" id="info">Address<br/>
+    <span class="text-muted large"><em>{{user.address}}</em></span>
+  </a>
+   <a href="#" class="list-group-item" id="info">Residence Country<br/>
+    <span class="text-muted large"><em>{{user.residenceCountry}}</em></span>
+  </a>
+  <a ng-show="type" href="#" class="list-group-item" id="info">Incorporation Country<br/>
+    <span class="text-muted large"><em>{{user.incorporationCountry}}</em></span>
+  </a>
+  <a ng-show="type" href="#" class="list-group-item" id="info">Industry Classification<br/>
+    <span class="text-muted large"><em>{{user.industryClassification}}</em></span>
+  </a>
+</div>

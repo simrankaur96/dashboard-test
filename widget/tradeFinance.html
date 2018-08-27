@@ -1,0 +1,53 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <i class="fa fa-bar-chart-o fa-fw"></i> Trade Finance
+    </div>
+    <!-- /.panel-heading -->
+    <div ng-cloak class="panel-body">
+      <!-- <div id="morris-donut-chart"></div>
+      <a href="#" class="btn btn-default btn-block">View Details</a> -->
+      <center><h4>Letter Of Credit</h4></center>
+      <center><div id="piechart"><h3>letter of credit</h3></div></center>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="small-box bg-blue mybox data-div-inner">
+                    <div class="inner">
+                        <h4>£{{ userDetails.message['Total Exposure'] }}</h4>
+                        <p>Total Exposure</p>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-md-6 ">
+                <div class="small-box bg-blue mybox data-div-inner">
+                    <div class="inner">
+                        <h4>£{{ userDetails.message['Work in Progress'] }}</h4>
+                        <p>Work in Progress</p>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-6">
+                <div class="small-box bg-blue mybox data-div-inner">
+                    <div class="inner">
+                        <h4>LCs:{{ userDetails.message['Expiring LC'] }}</h4>
+                        <p>Expiring in next 30 days</p>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="small-box bg-blue mybox data-div-inner">
+                  <div class="inner">
+                      <h4>£{{ userDetails.message['Expiring Amount'] }}</h4>
+                      <p> Expiring Amount</p>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <input type="hidden" id="total_discounted" ng-model="outputdatatotal">
+          <input type="hidden" id="last_month" ng-model="outputdatalast">
+          <input type="hidden" id="pending_payments" ng-model="outputdatapending">
+        <!-- /.row -->
+    </div>
+    <!-- /.panel-body -->
+</div>

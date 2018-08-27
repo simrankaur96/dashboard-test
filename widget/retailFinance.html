@@ -1,0 +1,68 @@
+<div class="col-lg-6">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <i class="fa fa-bar-chart-o fa-fw"></i> Retail Banking
+        </div>
+        <!-- /.panel-heading -->
+        <div ng-cloak class = "panel-body">
+          <div ng-if="data1.Items[0].ACCOUNT_NUMBER.S == 'NULL'" >
+            <div><center><h1>NO ACCOUNT AVAILABLE</h1></center></div>
+          </div>
+          <div ng-if="data1.Items[0].ACCOUNT_NUMBER.S != 'NULL'" >
+              <div class="row">
+                  <div class="col-sm-6">
+                      <div style="background-color:#14366E;border: 1px solid #14366E;margin-top: 5px;height: 70px; ">
+                          <h4 style="color: white;margin-top: 10px;margin-left: 10px">
+                              Account Number:
+                              <br>{{accno}}
+                          </h4>
+                      </div>
+                      <div style="background-color:#14366E;border: 1px solid #14366E;margin-top: 5px;height: 70px; ">
+                          <h4 style="color: white;margin-top: 10px;margin-left: 10px">
+                              Net Balance :
+                              <span style=" margin-right: 10px;">
+                                  £{{bal}}
+                              </span>
+                          </h4>
+                      </div>
+                      <br>
+                      <span style="font-size: 14px">
+                          <b>Total Credit(Last Month): £{{creditval}}</b>
+                          <br><b>Total Debit(Last Month): £{{debitval}}</b>
+
+                      </span>
+                  </div>
+                  <div class="col-sm-6">
+                      <div class="chart-container">
+                          <br>
+                          <div class="pie-chart-container">
+                              <canvas id="pie-chartcanvas-1"></canvas>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-sm-12">
+                      <h2>Transactions</h2>
+                      <table class="table table-striped" style="font-size:75%;position:relative;margin-top: 5px">
+                          <tr>
+                              <th>Transaction Id</th>
+                              <th>Date</th>
+                              <th>Type</th>
+                              <th>Amount</th>
+                          </tr>
+                          <tr ng-repeat="item in data2.Items">
+                              <td>{{item.TRANSACTION_ID.S}}</td>
+                              <td>{{item.TRANSACTION_DATE.S}}</td>
+                              <td>{{item.TRANSACTION_TYPE.S}}</td>
+                              <td>{{item.TRANSACTION_AMOUNT.N}}</td>
+                          </tr>
+                      </table>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>
