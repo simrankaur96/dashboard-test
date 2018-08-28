@@ -15,8 +15,9 @@
         // For Customer Info display -->
         $scope.displayContent = false;
         $scope.userError = false;
-        $http.get("https://l20jgb1jch.execute-api.us-east-1.amazonaws.com/customers/info?cin="+
-                  cin).then(function(response){
+      var endPoint = "https://l20jgb1jch.execute-api.us-east-1.amazonaws.com/customers/info?cin=";
+      var theUrl   = endPoint + cin;
+        $http.get(theUrl).then(function(response){
                     //console.log("working?");
                     if(response.data.queryStatus!="success"){
                       $scope.userError = true;

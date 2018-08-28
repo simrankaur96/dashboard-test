@@ -4,10 +4,10 @@
             <i class="fa fa-bar-chart-o fa-fw"></i> <b>Retail Banking</b>
         </div>
         <!-- /.panel-heading -->
-        <div ng-cloak class = "panel-body">
+        <div ng-cloak class = "panel-body" >
           <div ng-show="displaySCF">
           <div ng-if="data1.Items[0].ACCOUNT_NUMBER.S == 'NULL'" >
-            <div><center><h6>NO ACCOUNT AVAILABLE</h6></center></div>
+            <div ><center><p style="margin-bottom:0px;font-family:'Roboto';font-size:14px">No Account Available</p></center></div>
           </div>
           <div ng-if="data1.Items[0].ACCOUNT_NUMBER.S != 'NULL'" >
               <div class="row">

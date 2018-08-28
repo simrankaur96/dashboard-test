@@ -9,7 +9,7 @@ function f1(datac) {
                 label: "NETVAL",
                 data: datac,
                 backgroundColor: [
-                "#3366cc", "#c0c0c0"
+                "#3366cc", "#dc3912"
                 ],
                 borderWidth: [1, 1]
             }
