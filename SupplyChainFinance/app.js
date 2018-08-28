@@ -50,7 +50,7 @@ $scope.outputdatalast = "";
                     axes: {
                         x: {
                             distance: {
-                                label: 'Amount in EUR (in Thosuands)'
+                                label: 'Amount in GBP (in Thosuands)'
                             }, // Bottom x-axis.
                             brightness: {
                                 side: 'top',
