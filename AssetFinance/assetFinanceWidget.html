@@ -1,0 +1,23 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <i class="fa fa-bar-chart-o fa-fw"></i> <b>Retail Banking</b>
+    </div>
+    <div class="panel-body">
+    <center>
+      <div style="font-family: 'Roboto'; font-size: 15">
+        <div id="barchart_material"></div>
+        <div style="text-align: center; font-size: 12; padding-top: 5px; color: #424242" ng-hide="resp">
+          GBP(&pound;)
+        </div>
+        <br>
+        <div style="text-align: center; padding-top: 5px; font-size: 14" ng-hide="resp">
+          <span style='background-color: #3366cc'>&nbsp;&nbsp;&nbsp;&nbsp;</span> Amount Leased &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='background-color: #dc3912'>&nbsp;&nbsp;&nbsp;&nbsp;</span> Amount Pending
+        </div>
+        <br>
+        <div id="linea" style="align-content: center;" ng-hide="resp">
+          <b> Total Amount Leased: {{totleased}} &nbsp;&nbsp;&nbsp;&nbsp;Total Amount Pending: {{totpend}} </b>
+        </div>
+      </div>
+    </center>
+    </div>
+  </div>

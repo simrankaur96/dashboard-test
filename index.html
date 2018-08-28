@@ -43,22 +43,21 @@
         <link href="css/adm.css" rel="stylesheet">
         <link href="css/custom.css" rel="stylesheet">
         <link href="https://canvasjs.com/assets/css/jquery-ui.1.11.2.min.css" rel="stylesheet" />
-        <script src="js/supplyChain/app.js"></script>
+        <script src="SupplyChainFinance/app.js"></script>
 
         <!-- Script headers for Asset Finance-->
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script src="js/assetFinance/app.js"></script>
-        <script src = "getData.js"></script>
+        <script src="AssetFinance/app.js"></script>
 
         <!-- Script for Trade Finance -->
         <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
-        <script src="js/tradeFinance/app.js"></script>
+        <script src="TradeFinance/app.js"></script>
 
         <!-- Script for Retail Banking -->
-        <script src="js/retailBanking/app.js"></script>
-        <script src="js/retailBanking/Chart.min.js"></script>
-        <script src="js/retailBanking/chartfun1.js"></script>
-        <script src="js/retailBanking/default1.css"></script>
+        <script src="RetailBanking/app.js"></script>
+        <script src="RetailBanking/Chart.min.js"></script>
+        <script src="RetailBanking/chartfun1.js"></script>
+        <script src="RetailBanking/default1.css"></script>
 
     </head>
     <body ng-app="mainApp">
@@ -89,7 +88,7 @@
                               <div class="input-group custom-search-form">
                                 <form ng-submit="display()" class="input-group custom-search-form">
                                     <input type="text" class="form-control" placeholder="Enter CIN..." ng-model="CINinput" id="CINinput">
-                                    <span class="input-group-btn"><button class="btn btn-primary" type="button" onclick="init()" ng-click="display()">
+                                    <span class="input-group-btn"><button class="btn btn-primary" type="button" ng-click="display()">
                                             <i class="fa fa-search"></i>
                                         </button>
                                     </span>
@@ -98,7 +97,7 @@
                                 <!-- /input-group -->
                             </li>
                             <li>
-                              <div ng-cloak ng-include="'widget/customerInfo.html'">
+                              <div ng-cloak ng-include="'customerInfo.html'">
                               <!--Display customer information here-->
                               </div>
                             </li>
@@ -120,22 +119,22 @@
                 <!-- /.row -->
                 <div class="row">
                     <div class="col-lg-6">
-                        <div ng-include = "'widget/assetFinance.html'">
+                        <div ng-include = "'AssetFinance/assetFinanceWidget.html'">
                             <!-- Asset Finance Widget goes here -->
                         </div>
 
                         <!-- /.panel -->
-                        <div ng-include = "'widget/tradeFinance.html'">
+                        <div ng-include = "'TradeFinance/tradeFinanceWidget.html'">
                             <!-- Tade Finance Widget goes here -->
                         </div>
 
                     </div>
 
-                    <div ng-include = "'widget/retailBanking.html'">
+                    <div ng-include = "'RetailBanking/retailBankingWidget.html'">
                       <!-- Retail Finance widget goes here -->
                     </div>
 
-                    <div ng-include = "'widget/supplyChain.html'">
+                    <div ng-include = "'SupplyChainFinance/supplyChainWidget.html'">
                       <!-- Retail Finance widget goes here -->
                     </div>
 
