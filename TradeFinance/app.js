@@ -1,4 +1,5 @@
 tradeFinance = function(cin,$scope,$http){
+  $scope.displayTB = true;
   $scope.status_customer = true;
   var userDetailsSuccess = function (response) {
     var wip=0;
