@@ -1,7 +1,8 @@
 tradeFinance = function(cin,$scope,$http){
-  $scope.displayTB = true;
+  
   $scope.status_customer = true;
   var userDetailsSuccess = function (response) {
+    $scope.displayTF = true;
     var wip=0;
     var te=0;
     $scope.userDetails = response.data;
@@ -25,7 +26,7 @@ tradeFinance = function(cin,$scope,$http){
       //console.log("ERROR :::" + error);
       //onsole.log(error)
   }
-
+      $scope.displayTF = false;
       $http.get("https://bztwi1cu97.execute-api.ap-south-1.amazonaws.com/TF/tf?CIN="+cin)
       .then(userDetailsSuccess,userDetailsError);
       google.charts.load('current', { 'packages': ['corechart'] });
