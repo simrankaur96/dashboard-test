@@ -9,6 +9,7 @@ supplyChain = function (cin, $scope, $http) {
             $scope.displaySCF = true;
             var responsedata = response.data;
             $scope.outputdatacin = responsedata.cin;
+        $scope.outputvalid = responsedata.status.toLocaleString();
             $scope.outputdatatotal = responsedata.total_discounted.toLocaleString();
             $scope.outputdatapending = responsedata.pending_payments.toLocaleString();
             $scope.outputdatalast = responsedata.last_month.toLocaleString();
@@ -24,9 +25,9 @@ supplyChain = function (cin, $scope, $http) {
 
                 var data = google.visualization.arrayToDataTable([
             ['', 'In GBP(in Thousands)', { role: 'style' } ],
-            ['Paid', responsedata.total_discounted, 'green'], // English color name
+            ['Discounted', responsedata.total_discounted, 'green'], // English color name
              // CSS-style declaration
-            ['Last Month', responsedata.last_month, '#0000ff'],
+            ['Paid Last Month', responsedata.last_month, '#0000ff'],
             ['Pending', responsedata.pending_payments,'#ff0000']
         ]);
 
