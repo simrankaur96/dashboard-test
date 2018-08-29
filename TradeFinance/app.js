@@ -31,7 +31,9 @@ tradeFinance = function(cin,$scope,$http){
       google.charts.setOnLoadCallback(drawChart);
 
       // Draw the chart and set the chart values
-      function drawChart(x,y) {
+      
+}
+function drawChart(x,y) {
 
           var data = google.visualization.arrayToDataTable([
               ['Task', 'Hours per Day'],
@@ -54,4 +56,3 @@ tradeFinance = function(cin,$scope,$http){
           var chart = new google.visualization.PieChart(document.getElementById('piechart'));
           chart.draw(data, options);
       }
-}
