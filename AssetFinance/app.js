@@ -23,10 +23,8 @@ function drawChart() {
 }
 
 assetFinance = function(cin,$scope,$http){
-  $scope.displayAF = false;
   $scope.resp = true;
   var successCallback = function (response) {
-    $scope.displayAF = true;
     if (response.data.length > 0) {
       $scope.resp = false;
       // console.log(response.data);

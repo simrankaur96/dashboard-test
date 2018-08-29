@@ -1,8 +1,6 @@
 retailBanking = function(cin,$scope,$http){
-      $scope.displayRB = false;
       var acc1;
       var responseCallback1 = function (response) {
-          $scope.displayRB = true;
           $scope.data1 = response.data;
 
           s1=$scope.data1;
