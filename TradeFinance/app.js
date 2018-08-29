@@ -1,4 +1,5 @@
 tradeFinance = function(cin,$scope,$http){
+  $scope.status_customer=true;
   var userDetailsSuccess = function (response) {
     $scope.displayTF=true;
     var wip=0;
@@ -8,14 +9,14 @@ tradeFinance = function(cin,$scope,$http){
     te=te+$scope.userDetails.message['Total Exposure'];
     if($scope.userDetails.message['status']=="Success")
     {
+        $scope.status_customer=true;  
         drawChart(wip,te);
-        $scope.status_customer=true;
         //$scope.nocus=false;
     }
     else
     {
         $scope.status_customer=false;
-        drawChart(wip,te);
+        //drawChart(wip,te);
         //$scope.nocus=true;
     }
   };
