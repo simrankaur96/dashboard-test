@@ -5,10 +5,15 @@
     <!-- /.panel-heading -->
     <div ng-cloak class="panel-body" >
       <div ng-show="displayTF">
+      <div ng-hide="status_customer">
+            <div><center><h6>NO ACCOUNT AVAILABLE</h6></center></div>
+      </div>
+
+      <div ng-show="status_customer">
       <!-- <div id="morris-donut-chart"></div>
       <a href="#" class="btn btn-default btn-block">View Details</a> -->
       <center><h4>Letter Of Credit</h4></center>
-      <center><div id="piechart"><h3>letter of credit</h3></div></center>
+      <center><div id="piechart"></div></center>
         <div class="row">
             <div class="col-md-6">
                 <div class="small-box bg-blue mybox data-div-inner">
@@ -49,6 +54,7 @@
           <input type="hidden" id="last_month" ng-model="outputdatalast">
           <input type="hidden" id="pending_payments" ng-model="outputdatapending">
         <!-- /.row -->
+          </div>
     </div>
     <!-- /.panel-body -->
 </div>
