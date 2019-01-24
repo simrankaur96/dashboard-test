@@ -19,3 +19,5 @@ Enter a CIN (Customer Information Number) between 1500000011-1500000022, and the
 - JavaScript
 - AngularJS 1
 - Bootstrap 3
+
+Google charts API is used for the graphs.
